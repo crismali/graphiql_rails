@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>GraphiqlRails</title>
-  <%= stylesheet_link_tag "graphiql_rails/graphiql-0.4.5" %>
+  <%= stylesheet_link_tag "graphiql_rails/graphiql-#{params[:version] || '0.4.5'}" %>
   <%= javascript_include_tag "graphiql_rails/application" %>
-  <%= javascript_include_tag "graphiql_rails/graphiql-0.4.5" %>
+  <%= javascript_include_tag "graphiql_rails/graphiql-#{params[:version] || '0.4.5'}" %>
   <%= csrf_meta_tags %>
 </head>
 <body>

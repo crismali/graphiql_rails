@@ -8,6 +8,8 @@ module GraphiqlRails
       app.config.assets.precompile += %w(
         graphiql_rails/graphiql-0.4.5.css
         graphiql_rails/graphiql-0.4.5.js
+        graphiql_rails/graphiql-0.4.4.css
+        graphiql_rails/graphiql-0.4.4.js
       )
     end
   end

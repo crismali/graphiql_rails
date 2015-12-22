@@ -23,4 +23,22 @@ RSpec.describe "Page", js: true do
       expect(page).to have_text("Super specified")
     end
   end
+
+  context "specifying the graphiql version", js: false do
+    it "can be specified" do
+      visit graphiql_rails_path
+      expect(page.html).to match(/<link.+href=".+0\.4\.5.+>/i)
+      expect(page.html).to_not match(/<link.+href=".+0\.4\.4.+>/i)
+
+      expect(page.html).to match(/<script.+src=".+0\.4\.5.+>/i)
+      expect(page.html).to_not match(/<script.+src=".+0\.4\.4.+>/i)
+
+      visit specified_graphiql_rails_path
+      expect(page.html).to match(/<link.+href=".+0\.4\.4.+>/i)
+      expect(page.html).to_not match(/<link.+href=".+0\.4\.5.+>/i)
+
+      expect(page.html).to match(/<script.+src=".+0\.4\.4.+>/i)
+      expect(page.html).to_not match(/<script.+src=".+0\.4\.5.+>/i)
+    end
+  end
 end

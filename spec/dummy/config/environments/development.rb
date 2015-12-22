@@ -38,4 +38,21 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  javascripts_dir = Rails.root.join("../../spec/javascripts")
+
+  File.open(javascripts_dir.join("spec_helper.js"), "r") do |f|
+    f.each_line do |line|
+      match = line.match(%r{\A//= require (?<file_path>.+)\n\z})
+      if match
+        path_to_precompile = "#{match['file_path']}.self.js"
+        Rails.application.config.assets.precompile << path_to_precompile
+      end
+    end
+  end
+
+  Dir[javascripts_dir.join("**/*.js")].each do |path|
+    path_to_precompile = Pathname.new(path).relative_path_from(javascripts_dir).to_s.sub(/\.js\z/, ".self.js")
+    Rails.application.config.assets.precompile << path_to_precompile
+  end
 end

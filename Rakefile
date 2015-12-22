@@ -25,6 +25,9 @@ RSpec::Core::RakeTask.new
 require "rubocop/rake_task"
 RuboCop::RakeTask.new
 
-task(:default).clear.enhance(%w(rubocop spec))
+desc "Run the javascript specs"
+task teaspoon: "app:teaspoon"
+
+task(:default).clear.enhance(%w(rubocop spec teaspoon))
 
 Bundler::GemHelper.install_tasks

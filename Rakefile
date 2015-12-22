@@ -19,4 +19,12 @@ load "rails/tasks/engine.rake"
 
 load "rails/tasks/statistics.rake"
 
+require "rspec/core/rake_task"
+RSpec::Core::RakeTask.new
+
+require "rubocop/rake_task"
+RuboCop::RakeTask.new
+
+task(:default).clear.enhance(%w(rubocop spec))
+
 Bundler::GemHelper.install_tasks

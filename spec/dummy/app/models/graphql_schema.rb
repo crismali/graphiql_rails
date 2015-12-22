@@ -5,9 +5,7 @@ class Post
     @id = id
   end
 
-  def id
-    @id
-  end
+  attr_reader :id
 
   def title
     "The Wackiest #{id}"
@@ -23,9 +21,7 @@ class Comment
     @id = id
   end
 
-  def id
-    @id
-  end
+  attr_reader :id
 
   def author_id
     12

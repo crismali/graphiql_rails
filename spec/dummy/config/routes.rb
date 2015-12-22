@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   mount GraphiqlRails::Engine => "/graphiql_rails", defaults: { endpoint: "/graphql" }
   mount GraphiqlRails::Engine => "/graphiql_rails_specified",
-    as: :specified_graphiql_rails,
-    defaults: {
-      endpoint: "/graphql_specified",
-      version: "0.4.4"
-    }
+        as: :specified_graphiql_rails,
+        defaults: {
+          endpoint: "/graphql_specified",
+          version: "0.4.4"
+        }
 end

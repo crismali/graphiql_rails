@@ -13,7 +13,6 @@ SpecifiedType = GraphQL::ObjectType.define do
   field :something_specific, !types.String
 end
 
-
 SpecifiedQueryType = GraphQL::ObjectType.define do
   name "Query"
   description "Super specified"

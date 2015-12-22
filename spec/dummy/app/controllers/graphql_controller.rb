@@ -3,4 +3,8 @@ class GraphqlController < ApplicationController
   def graphql
     render json: GraphqlSchema.execute(params[:query])
   end
+
+  def graphql_specified
+    render json: SpecifiedEndpointSchema.execute(params[:query])
+  end
 end

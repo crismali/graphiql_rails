@@ -1,3 +1,5 @@
+require "graphql"
+
 class Post
   def initialize(id)
     @id = id

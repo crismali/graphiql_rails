@@ -25,8 +25,13 @@ RSpec::Core::RakeTask.new
 require "rubocop/rake_task"
 RuboCop::RakeTask.new
 
+desc "Set TEASPOON_ENV for to run Teaspoon Rake task from project root"
+task :teaspoon_setup do
+  ENV["TEASPOON_ENV"] = "./spec/teaspoon_env.rb"
+end
+
 desc "Run the javascript specs"
-task teaspoon: "app:teaspoon"
+task teaspoon: %w(teaspoon_setup app:teaspoon)
 
 task(:default).clear.enhance(%w(rubocop spec teaspoon))
 

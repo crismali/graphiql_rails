@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 2.2.3
+before_install:
+  - gem update --system
+  - gem --version
+  - gem install bundler
+cache: bundler
+gemfile:
+  - gemfiles/rails_4.0.gemfile
+  - gemfiles/rails_4.1.gemfile
+  - gemfiles/rails_4.2.gemfile

@@ -4,16 +4,11 @@ AllCops:
     - Gemfile
     - "**/config.ru"
   Exclude:
-    - Vagrantfile
-    - cookbooks/**/*
     - tmp/**/*
     - db/**/*
     - bin/**/*
-    - spec/support/feature_helper.rb
-    - scripts/**/*
     - spec/teaspoon_env.rb
-    - spec/support/fake_analytics_ruby.rb
-
+    - vendor/bundler/**/*
 Style/AlignParameters:
   Enabled: false
 

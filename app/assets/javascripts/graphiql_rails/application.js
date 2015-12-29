@@ -11,4 +11,7 @@
 // about supported directives.
 //
 //= require graphiql_rails/fetch.min
+//= require graphiql_rails/uri
+//= require graphiql_rails/lodash
+//= require graphiql_rails/graphiql_rails
 //= require react

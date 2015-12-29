@@ -8,7 +8,9 @@ AllCops:
     - db/**/*
     - bin/**/*
     - spec/teaspoon_env.rb
-    - vendor/bundler/**/*
+    - vendor/bundle/**/*
+    - vendor/*
+    - vendor/**/*
 Style/AlignParameters:
   Enabled: false
 

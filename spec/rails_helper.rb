@@ -6,7 +6,7 @@ require "rspec/rails"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
-ActiveRecord::Migration.maintain_test_schema!
+ActiveRecord::Migration.maintain_test_schema! if Rails::VERSION::STRING.to_f != 4.0
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = true

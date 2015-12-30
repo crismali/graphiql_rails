@@ -10,7 +10,8 @@ addons:
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+  - sleep 2 # give xvfb some time to start
+  - bundle exec rake -T
 env:
   global:
     - TRAVIS=true

@@ -6,7 +6,11 @@ before_install:
   - gem --version
   - gem install bundler
 addons:
-  firefox: "39.0"
+  firefox: latest
+env:
+  global:
+    - TRAVIS=true
+    - DISPLAY=:99.0
 cache: bundler
 gemfile:
   - gemfiles/rails_4.0.gemfile

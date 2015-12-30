@@ -15,6 +15,7 @@ before_script:
 env:
   global:
     - TRAVIS=true
+    - RAILS_ENV=development
 cache: bundler
 gemfile:
   - gemfiles/rails_4.0.gemfile

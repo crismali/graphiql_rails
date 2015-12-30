@@ -1,3 +1,4 @@
+require "lodash-rails"
 require "react-rails"
 
 module GraphiqlRails

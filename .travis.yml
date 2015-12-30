@@ -5,8 +5,9 @@ before_install:
   - gem update --system
   - gem --version
   - gem install bundler
-addons:
-  firefox: latest
+before_script:
+  - apt-get update
+  - apt-get install firefox
 env:
   global:
     - TRAVIS=true

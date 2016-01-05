@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    graphiql_rails (0.0.1)
+    graphiql_rails (0.0.2)
       lodash-rails
       rails (>= 4.0.0)
       react-rails (>= 1.5.0)
